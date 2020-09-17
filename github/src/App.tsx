@@ -23,6 +23,8 @@ function App() {
       <BrowserRouter>
         <Header />
 
+        <Profile />
+
         <Routes>
           <Route path="/" element={<Profile />} />
           <Route path="/:username" element={<Profile />} />
