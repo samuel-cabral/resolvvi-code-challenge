@@ -18,7 +18,6 @@ const Profile: React.FC = () => {
       <CssBaseline />
       <Header />
       <ProfileData />
-
       {/* <Footer /> */}
     </div>
   );

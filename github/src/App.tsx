@@ -38,6 +38,10 @@ const theme = createMuiTheme({
     success: {
       main: '#2ea44f',
     },
+    text: {
+      primary: '#1b1f23',
+      secondary: '#586069',
+    },
   },
 });
 
