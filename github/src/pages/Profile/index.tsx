@@ -1,26 +1,27 @@
 import React from 'react';
-import { CssBaseline, Container } from '@material-ui/core';
-
+import { makeStyles, Theme, CssBaseline } from '@material-ui/core';
+import Header from '../../components/Header';
 import ProfileData from '../../components/ProfileData';
 
-function Profile() {
+const useStyles = makeStyles((theme: Theme) => ({
+  root: {
+    background: theme.palette.primary.light,
+    height: '100vh',
+  },
+}));
+
+const Profile: React.FC = () => {
+  const classes = useStyles();
+
   return (
-    <>
+    <div className={classes.root}>
       <CssBaseline />
-      <Container>
-        <ProfileData
-          username="samuel-cabral"
-          name="Samuel Cabral"
-          avatarUrl="https://avatars1.githubusercontent.com/u/23100510"
-          followers={887}
-          following={7}
-          company={undefined}
-          location="Brazil"
-          email="samuelcabral.mail@gmail.com"
-          blog={undefined}
-        />
-      </Container>
-    </>
+      <Header />
+      <ProfileData />
+
+      {/* <Footer /> */}
+    </div>
   );
-}
+};
+
 export default Profile;

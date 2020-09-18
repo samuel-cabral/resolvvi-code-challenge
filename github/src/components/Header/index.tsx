@@ -14,7 +14,7 @@ import SearchIcon from '@material-ui/icons/Search';
 
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
-    height: '100vh',
+    background: theme.palette.primary.main,
   },
   appBar: {
     boxShadow: 'none',
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
 }));
 
-function Header() {
+const Header: React.FC = () => {
   const classes = useStyles();
 
   return (
@@ -102,6 +102,6 @@ function Header() {
       </AppBar>
     </div>
   );
-}
+};
 
 export default Header;

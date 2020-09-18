@@ -1,40 +1,44 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core';
+import { BrowserRouter } from 'react-router-dom';
 
-import Header from './components/Header';
-import Profile from './pages/Profile';
-import Repo from './pages/Repo';
+import {
+  createMuiTheme,
+  ThemeProvider,
+  makeStyles,
+} from '@material-ui/core/styles';
+import Routes from './routes';
+
+const useStyles = makeStyles({
+  root: {
+    background: 'red',
+    height: '100vh',
+  },
+});
+
+const App: React.FC = () => {
+  const classes = useStyles();
+
+  return (
+    <ThemeProvider theme={theme}>
+      <div className={classes.root}>
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
+  );
+};
 
 const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#24292e',
+      light: '#f5f5f5',
     },
-    secondary: {
-      main: '#7159c1',
+    success: {
+      main: '#2ea44f',
     },
   },
 });
-
-function App() {
-  return (
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Header />
-
-        <Profile />
-
-        <Routes>
-          <Route path="/" element={<Profile />} />
-          <Route path="/:username" element={<Profile />} />
-          <Route path="/:username/:reponame" element={<Repo />} />
-        </Routes>
-
-        {/* <Footer /> */}
-      </BrowserRouter>
-    </ThemeProvider>
-  );
-}
 
 export default App;
