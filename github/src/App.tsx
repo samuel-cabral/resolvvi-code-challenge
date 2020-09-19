@@ -6,11 +6,13 @@ import {
   ThemeProvider,
   makeStyles,
 } from '@material-ui/core/styles';
+import GlobalStyles from './styles/GlobalStyles';
+
 import Routes from './routes';
 
 const useStyles = makeStyles({
   root: {
-    background: 'red',
+    margin: 0,
     height: '100vh',
   },
 });
@@ -33,7 +35,7 @@ const theme = createMuiTheme({
   palette: {
     primary: {
       main: '#24292e',
-      light: '#f5f5f5',
+      light: 'white',
     },
     success: {
       main: '#2ea44f',
